@@ -28,7 +28,7 @@ document.getElementById('value2').innerHTML = "";
 document.getElementById('valueError').innerHTML = " ";
 for ( ; ; ){
 var splitinputvalue = inputvalue.toString().split('')
-ascdinputvalue = splitinputvalue.sort(function(a,b){ return a - b}).join('')
+ascdinputvalue = splitinputvalue.sort(function(a,b){ return a - b}).join('').split()
 descinputvalue = splitinputvalue.sort(function(a,b){ return b - a}).join('')
 var ans = descinputvalue - ascdinputvalue;
 inputvalue = ans.toString()
