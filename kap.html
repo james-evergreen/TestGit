@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <b style="font-size: 20px; border: 2px dotted rgb(3, 212, 38); border-radius: 5px;width: 200px;">Choose four number to display the Kaprica Constant </b>
+    <p></p>
+      <i>fastest kaprica constant algorith</i><p></p>
+      <i id="valueError" style="color: red;" >i</i><p></p>
+    <input id="num"/>
+    <button onclick="kap()">Go</button> <p></p>
+    <div style="height: auto; overflow: hidden;">
+   <span id="value2" style=" height:auto;width: 50px; border:  1px dotted rgb(130, 130, 245);" ></span>
+</div> <p></p>
+    <span>Kaprica Constant Value: </span> <b id='answer' style="text-decoration: underline">____</b>
+    <script >
+    kap =function(){
+inputvalue = document.getElementById('num').value
+if(inputvalue.length != 4 || inputvalue ===""){
+    alert('Qwhat is that')
+    document.getElementById('valueError').innerHTML = "Input a value like : 1234";
+}else{
+document.getElementById('value2').innerHTML = "";
+document.getElementById('valueError').innerHTML = " ";
+for ( ; ; ){
+var splitinputvalue = inputvalue.toString().split('')
+ascdinputvalue = splitinputvalue.sort(function(a,b){ return a - b}).join('')
+descinputvalue = splitinputvalue.sort(function(a,b){ return b - a}).join('')
+var ans = descinputvalue - ascdinputvalue;
+inputvalue = ans.toString()
+document.getElementById('value2').innerHTML += descinputvalue  + ' - '+ ascdinputvalue +'='+ ans +"<p></p>";
+//if(ans === 6174) break
+}
+}
+  document.getElementById('answer').innerHTML = ans;
+}
+    </script>
+</body>
+</html>
